@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "esnext", "moduleResolution": "bundler", "esModuleInterop": true, "strict": false,
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": ["../../*"],
+      "better-sqlite3": ["../shims/better-sqlite3.ts"],
+      "server-only": ["../shims/empty.ts"],
+      "next/headers": ["../shims/next-headers.ts"],
+      "next/navigation": ["../shims/next-navigation.ts"],
+      "bcryptjs": ["../shims/bcryptjs.ts"]
+    }
+  }
+}

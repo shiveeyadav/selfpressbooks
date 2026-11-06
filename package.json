@@ -9,7 +9,8 @@
     "start": "next start -p 3000",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
-    "create-admin": "node scripts/create-admin.mjs"
+    "create-admin": "node scripts/create-admin.mjs",
+    "test:integration": "tsx --tsconfig tests/integration/tsconfig.json --test tests/integration/flow.test.ts"
   },
   "engines": {
     "node": ">=20"
