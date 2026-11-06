@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+uploads/
+data/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+npm-debug.log*
