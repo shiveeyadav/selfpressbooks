@@ -42,7 +42,7 @@ Printing usually takes a few working days. Delivery from India to the UK is {{de
 UK delivery is included in the price shown for each book.
 
 ## Tracking
-When your order is posted we add the India Post tracking number to your order and email it to you.
+When your order is posted we add the India Post tracking number to your order page (use the link you were given when you ordered).
 
 ## Customs and import charges
 [OWNER TO CONFIRM: who pays any UK VAT or import charges on books posted from India, and how this is handled.]

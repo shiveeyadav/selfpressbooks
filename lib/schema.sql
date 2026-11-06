@@ -54,6 +54,8 @@ CREATE INDEX IF NOT EXISTS idx_books_user ON books(user_id);
 CREATE TABLE IF NOT EXISTS orders (
   id                 INTEGER PRIMARY KEY AUTOINCREMENT,
   public_ref         TEXT NOT NULL UNIQUE,
+  -- Secret in the buyer's order-status link (stored hashed).
+  access_token_hash  TEXT NOT NULL,
   user_id            INTEGER REFERENCES users(id) ON DELETE SET NULL,
   email              TEXT NOT NULL,
   full_name          TEXT NOT NULL,

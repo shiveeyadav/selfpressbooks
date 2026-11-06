@@ -37,7 +37,7 @@ test('schema applies twice and enforces constraints', () => {
   assert.equal(b.status, 'pending_review');
   assert.throws(() => insertBook(db, { royalty_pence: -1 }));
   assert.throws(() => insertBook(db, { trim_size: 'A3' }));
-  db.prepare("INSERT INTO orders (public_ref, email, full_name, address_line1, city, postcode, total_pence) VALUES ('R1','e@x','N','1 St','London','SW1A 1AA',1000)").run();
+  db.prepare("INSERT INTO orders (public_ref, access_token_hash, email, full_name, address_line1, city, postcode, total_pence) VALUES ('R1','h','e@x','N','1 St','London','SW1A 1AA',1000)").run();
   assert.equal(db.prepare('SELECT status FROM orders').get().status, 'pending_payment');
   assert.throws(() => db.prepare("UPDATE orders SET status='refunded_magic'").run());
   assert.throws(() => db.prepare("UPDATE orders SET country='US'").run());
