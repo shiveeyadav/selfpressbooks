@@ -35,7 +35,7 @@ export async function GET(req: Request, { params }: { params: { kind: string; id
 
   const download = new URL(req.url).searchParams.get('download') === '1';
   const safeName = `${book.id}-${params.kind}-${original}`.replace(/[^\w.\-]/g, '_');
-  return new Response(data, {
+  return new Response(new Uint8Array(data), {
     headers: {
       'Content-Type': mime,
       'Content-Length': String(data.length),
