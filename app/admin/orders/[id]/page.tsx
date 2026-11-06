@@ -1,3 +1,4 @@
+import { requireAdmin } from '@/lib/auth';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getOrder, orderEvents, orderItems } from '@/lib/orders';
@@ -8,6 +9,7 @@ import { changeOrderStatusAction, updateOrderDetailsAction } from '@/app/admin/a
 import { ErrorNotice, OkNotice, sp } from '@/components/Notice';
 
 export default function AdminOrderPage({ params, searchParams }: { params: { id: string }; searchParams: Record<string, string | string[] | undefined> }) {
+  requireAdmin();
   const order = /^\d+$/.test(params.id) ? getOrder(Number(params.id)) : undefined;
   if (!order) notFound();
   const items = orderItems(order.id);

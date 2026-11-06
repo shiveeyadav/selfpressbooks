@@ -1,8 +1,10 @@
+import { requireAdmin } from '@/lib/auth';
 import Link from 'next/link';
 import { listContentPages } from '@/lib/content';
 import { ErrorNotice, sp } from '@/components/Notice';
 
 export default function AdminPagesList({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+  requireAdmin();
   const pages = listContentPages();
   return (
     <>

@@ -1,3 +1,4 @@
+import { requireAdmin } from '@/lib/auth';
 import Link from 'next/link';
 import { listOrders } from '@/lib/orders';
 import { ORDER_STATUSES, ORDER_STATUS_LABEL, isOrderStatus } from '@/lib/order-status';
@@ -6,6 +7,7 @@ import { stripeConfigured } from '@/lib/stripe';
 import { ErrorNotice, sp } from '@/components/Notice';
 
 export default function AdminOrdersPage({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+  requireAdmin();
   const f = sp(searchParams.status) || 'active';
   const filter = f === 'all' || f === 'active' || isOrderStatus(f) ? f : 'active';
   const orders = listOrders(filter);

@@ -1,3 +1,4 @@
+import { requireAdmin } from '@/lib/auth';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getBook } from '@/lib/books';
@@ -11,6 +12,7 @@ import { ErrorNotice, OkNotice, sp } from '@/components/Notice';
 import type { Binding, PaperType, TrimSize } from '@/config/pricing';
 
 export default function AdminBookPage({ params, searchParams }: { params: { id: string }; searchParams: Record<string, string | string[] | undefined> }) {
+  requireAdmin();
   const book = /^\d+$/.test(params.id) ? getBook(Number(params.id)) : undefined;
   if (!book) notFound();
   const owner = getDb().prepare('SELECT name, email FROM users WHERE id = ?').get(book.user_id) as { name: string; email: string };

@@ -1,3 +1,4 @@
+import { requireAdmin } from '@/lib/auth';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getContentPage } from '@/lib/content';
@@ -6,6 +7,7 @@ import { DEFAULT_PAGES } from '@/content/defaults';
 import { ErrorNotice, OkNotice, sp } from '@/components/Notice';
 
 export default function EditPage({ params, searchParams }: { params: { slug: string }; searchParams: Record<string, string | string[] | undefined> }) {
+  requireAdmin();
   const def = DEFAULT_PAGES.find((p) => p.slug === params.slug);
   if (!def) notFound();
   const page = getContentPage(def.slug)!;

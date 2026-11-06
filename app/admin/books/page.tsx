@@ -1,3 +1,4 @@
+import { requireAdmin } from '@/lib/auth';
 import Link from 'next/link';
 import { listForReview } from '@/lib/books';
 import { formatGbp } from '@/lib/money';
@@ -5,6 +6,7 @@ import { BOOK_STATUS_LABEL } from '@/lib/labels';
 import { ErrorNotice, sp } from '@/components/Notice';
 
 export default function AdminBooksPage({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
+  requireAdmin();
   const f = sp(searchParams.status);
   const filter = f === 'approved' || f === 'rejected' || f === 'all' ? f : 'pending_review';
   const books = listForReview(filter);
