@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    image: selfpressbooks:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      DATA_DIR: /app/data
+    volumes:
+      - selfpressbooks_data:/app/data
+    # Bound to localhost only; nginx on the host proxies the public domain to it.
+    ports:
+      - "127.0.0.1:${HOST_PORT:-3030}:3000"
+
+volumes:
+  selfpressbooks_data:
