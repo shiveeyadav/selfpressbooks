@@ -26,7 +26,7 @@ export function GET(_req: Request, { params }: { params: { id: string } }) {
       `   Files: ${i.book_id}-interior-${i.interior_original} / ${i.book_id}-cover-${i.cover_original}`,
       '',
     ]),
-    'SHIP TO (India Post ITPS, tracked)',
+    'SHIP TO (tracked international post)',
     order.full_name,
     order.address_line1,
     ...(order.address_line2 ? [order.address_line2] : []),
@@ -36,7 +36,7 @@ export function GET(_req: Request, { params }: { params: { id: string } }) {
     'UNITED KINGDOM',
     ...(order.phone ? [`Tel: ${order.phone}`] : []),
     '',
-    'Please reply with the India Post tracking number once posted.',
+    'Please reply with the tracking number once posted.',
   ];
   return new Response(lines.join('\r\n'), {
     headers: {

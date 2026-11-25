@@ -21,7 +21,7 @@ export const siteConfig = {
   deliveryEstimate: 'typically 7–14 days after printing', // owner to confirm
 
   /**
-   * India Post tracking page URL with {tracking} placeholder, e.g. a URL the
+   * Parcel tracking page URL with {tracking} placeholder, e.g. a URL the
    * owner has confirmed works. Left empty so no unverified link is shown.
    */
   trackingUrlTemplate: '', // [NOT SET: tracking URL template]

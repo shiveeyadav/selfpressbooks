@@ -69,7 +69,7 @@ export default function CheckoutPage({ searchParams }: { searchParams: Record<st
           </div>
           <p className="small muted" style={{ marginTop: 16 }}>
             By placing the order you agree to the <Link href="/terms">Terms</Link>. Your name and address are shared with
-            our printer in India and India Post to deliver the book (see <Link href="/privacy">Privacy</Link>).
+            our printer in India and our delivery partner to deliver the book (see <Link href="/privacy">Privacy</Link>).
           </p>
           <div className="actions">
             <button type="submit">{payments ? `Continue to payment – ${formatGbp(total)}` : 'Place order (payment not yet available)'}</button>
@@ -82,7 +82,7 @@ export default function CheckoutPage({ searchParams }: { searchParams: Record<st
               {lines.map((l) => (
                 <tr key={l.book.id}><td>{l.quantity} × {l.book.title}</td><td>{formatGbp(l.linePence)}</td></tr>
               ))}
-              <tr><td>UK delivery (India Post)</td><td>Included</td></tr>
+              <tr><td>UK delivery (tracked)</td><td>Included</td></tr>
               <tr className="total"><td>Total</td><td>{formatGbp(total)}</td></tr>
             </tbody>
           </table>

@@ -15,7 +15,7 @@ export default function Footer() {
         </nav>
         <div>
           {siteConfig.siteName} is operated by {siteConfig.companyName}. Books are printed to order in India and posted to
-          the UK by India Post.
+          the UK by tracked post.
         </div>
       </div>
     </footer>

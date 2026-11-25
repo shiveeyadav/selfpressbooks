@@ -64,11 +64,11 @@ export const pricingConfig = {
   hardbackMinPages: 64, // PLACEHOLDER – confirm with printer
 
   /**
-   * UK delivery from India by India Post ITPS, per copy, in GBP pence.
+   * UK delivery from India by tracked international post, per copy, in GBP pence.
    * Duarte's working estimate is £3–5 per parcel; default £4.
    * Charged per copy (conservative: one parcel per copy).
    */
-  shippingPencePerCopy: 400, // PLACEHOLDER – confirm with real India Post ITPS rates
+  shippingPencePerCopy: 400, // PLACEHOLDER – confirm with real postage rates
 
   /** Platform (SelfPressBooks) margin as a percentage of the retail price. */
   platformMarginPercent: 15, // PLACEHOLDER – owner to decide

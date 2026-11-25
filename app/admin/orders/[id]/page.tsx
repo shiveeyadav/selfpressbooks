@@ -79,7 +79,7 @@ export default function AdminOrderPage({ params, searchParams }: { params: { id:
                 </select>
                 {next.includes('shipped') && (
                   <>
-                    <label htmlFor="tracking_number_s">India Post tracking number</label>
+                    <label htmlFor="tracking_number_s">Tracking number</label>
                     <input id="tracking_number_s" name="tracking_number" type="text" defaultValue={order.tracking_number ?? ''} placeholder="Required when marking shipped" />
                   </>
                 )}
@@ -113,7 +113,7 @@ export default function AdminOrderPage({ params, searchParams }: { params: { id:
           <form action={updateOrderDetailsAction} className="card">
             <h3 style={{ marginTop: 0 }}>Tracking & notes</h3>
             <input type="hidden" name="order_id" value={order.id} />
-            <label htmlFor="tracking_number">India Post tracking number</label>
+            <label htmlFor="tracking_number">Tracking number</label>
             <input id="tracking_number" name="tracking_number" type="text" maxLength={60} defaultValue={order.tracking_number ?? ''} />
             <label htmlFor="admin_note">Internal note</label>
             <textarea id="admin_note" name="admin_note" maxLength={2000} defaultValue={order.admin_note ?? ''} style={{ minHeight: 80 }} />

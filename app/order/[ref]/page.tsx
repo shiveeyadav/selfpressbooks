@@ -79,8 +79,8 @@ export default async function OrderPage({ params, searchParams }: { params: { re
 
       {tracking && (
         <div className="card" style={{ marginBottom: 18 }}>
-          <strong>India Post tracking number:</strong> {tracking}
-          {trackingUrl ? <> – <a href={trackingUrl} rel="noopener noreferrer" target="_blank">track parcel</a></> : <div className="small muted">Track it on the India Post website.</div>}
+          <strong>Tracking number:</strong> {tracking}
+          {trackingUrl ? <> – <a href={trackingUrl} rel="noopener noreferrer" target="_blank">track parcel</a></> : <div className="small muted">Track it on the carrier's website.</div>}
         </div>
       )}
 

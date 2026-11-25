@@ -196,7 +196,7 @@ export default function BookWizard({ defaultAuthorName, maxUploadMb }: { default
               <tbody>
                 <tr><td>Retail price</td><td>{retailPence ? formatGbp(retailPence) : '—'}</td></tr>
                 <tr><td>Printing</td><td>−{formatGbp(price.printCostPence)}</td></tr>
-                <tr><td>UK delivery (India Post)</td><td>−{formatGbp(price.shippingPence)}</td></tr>
+                <tr><td>UK delivery (tracked)</td><td>−{formatGbp(price.shippingPence)}</td></tr>
                 <tr><td>Platform fee ({pricingConfig.platformMarginPercent}%)</td><td>−{formatGbp(price.platformMarginPence)}</td></tr>
                 <tr className="total">
                   <td>Your royalty</td>

@@ -21,7 +21,7 @@ export const DEFAULT_PAGES: DefaultPage[] = [
 ## How it works
 - Authors upload an interior PDF and a cover, and choose trim size, paper and binding.
 - Each book is checked by us before it appears in the shop.
-- When a reader orders, the book is printed by our print partner in India and posted to the UK by India Post.
+- When a reader orders, the book is printed by our print partner in India and posted to the UK by tracked post.
 - Authors earn a royalty on every copy sold: the retail price minus printing, delivery and our platform fee.
 
 ## Who we are
@@ -30,7 +30,7 @@ export const DEFAULT_PAGES: DefaultPage[] = [
   {
     slug: 'delivery',
     title: 'Delivery',
-    body: `Every book is printed to order in India and sent to you by India Post's International Tracked Packet Service (ITPS).
+    body: `Every book is printed to order in India and sent to you by tracked international post.
 
 ## Where we deliver
 We currently deliver to addresses in the United Kingdom only.
@@ -42,7 +42,7 @@ Printing usually takes a few working days. Delivery from India to the UK is {{de
 UK delivery is included in the price shown for each book.
 
 ## Tracking
-When your order is posted we add the India Post tracking number to your order page (use the link you were given when you ordered).
+When your order is posted we add the tracking number to your order page (use the link you were given when you ordered).
 
 ## Customs and import charges
 [OWNER TO CONFIRM: who pays any UK VAT or import charges on books posted from India, and how this is handled.]
@@ -62,7 +62,7 @@ If your book arrives damaged, misprinted or with missing pages, email {{contactE
 [OWNER TO CONFIRM: cancellation policy for made-to-order goods under the Consumer Contracts Regulations 2013, and any goodwill returns policy.]
 
 ## Lost parcels
-If tracking shows no progress for 21 days, contact us and we will investigate with India Post.
+If tracking shows no progress for 21 days, contact us and we will investigate with the carrier.
 
 ## How refunds are paid
 Refunds go back to the card used to pay, usually within 5–10 working days after we approve them.`,
@@ -79,7 +79,7 @@ Refunds go back to the card used to pay, usually within 5–10 working days afte
 
 ## Why we use it
 - To run author accounts and publish books.
-- To print and deliver orders. Your name and delivery address are shared with our print partner in India and with India Post so the book can be printed and posted.
+- To print and deliver orders. Your name and delivery address are shared with our print partner in India and with our delivery partner so the book can be printed and posted.
 - To meet legal and accounting obligations.
 
 ## International transfers

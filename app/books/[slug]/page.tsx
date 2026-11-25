@@ -26,7 +26,7 @@ export default function BookPage({ params }: { params: { slug: string } }) {
           <p style={{ fontFamily: 'var(--sans)', fontSize: '1.5rem', fontWeight: 700, margin: '10px 0 4px' }}>
             {formatGbp(book.retail_pence)}
           </p>
-          <p className="small muted">Includes UK delivery. Printed to order and posted by India Post, {siteConfig.deliveryEstimate}.</p>
+          <p className="small muted">Includes UK delivery. Printed to order and posted by tracked post, {siteConfig.deliveryEstimate}.</p>
           <form action={addToCartAction} className="actions">
             <input type="hidden" name="book_id" value={book.id} />
             <label htmlFor="quantity" style={{ margin: 0 }}>Qty</label>

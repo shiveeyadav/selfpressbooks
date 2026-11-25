@@ -107,7 +107,7 @@ test('order flow: basket -> pending_payment -> stripe paid -> shipped -> deliver
 test('content pages default to draft and can be saved as reviewed', () => {
   const p = content.getContentPage('delivery')!;
   assert.equal(p.reviewed, false);
-  assert.match(p.body, /India Post/);
+  assert.match(p.body, /tracked international post/);
   content.saveContentPage('delivery', 'Delivery', 'New text', true);
   const q = content.getContentPage('delivery')!;
   assert.equal(q.reviewed, true);

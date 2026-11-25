@@ -1,8 +1,7 @@
 # SelfPressBooks (selfpressbooks.com) – MVP
 
 A print-on-demand self-publishing shop. Authors upload a finished book and set a price. When a UK reader buys it, the
-owner sends the files to an Indian print-on-demand printer, and the printed copy is posted to the reader by India Post
-(ITPS).
+owner sends the files to an Indian print-on-demand printer, and the printed copy is posted to the reader by tracked international post.
 
 > **Status: first version, not yet built or run.** The npm registry could not be reached from the container this was
 > written in, so `npm install`, `next build`, `next dev` and `docker build` were **never run**. There is no
@@ -21,7 +20,7 @@ owner sends the files to an Indian print-on-demand printer, and the printed copy
     refused and the minimum retail price is suggested.
 - **Pricing:** every rate is in `config/pricing.ts` (see placeholders below).
   - Print cost = base + per-page × pages × trim multiplier + binding surcharge, with separate B&W and colour rates.
-  - Royalty = retail − print − ITPS shipping − platform margin %.
+  - Royalty = retail − print − shipping − platform margin %.
   - The cost breakdown is saved with each book and each order item.
 - **Storefront:** home page with approved books, a book page, and search (title, author, description, ISBN). Only
   books that an admin has approved are public. Each new book starts as `pending_review`.
@@ -34,7 +33,7 @@ owner sends the files to an Indian print-on-demand printer, and the printed copy
   - Buyers get a private order-status link (reference + secret token).
 - **Admin panel** (`/admin`):
   - Orders list with status filters.
-  - Order status flow: `paid → sent_to_printer → printed → shipped → delivered`. "Shipped" needs an India Post
+  - Order status flow: `paid → sent_to_printer → printed → shipped → delivered`. "Shipped" needs a
     tracking number. You can cancel at any point before shipping. Marking an order paid by hand needs a note.
   - Every status change is recorded in the order history.
   - Each order has download links for the interior and cover files, plus a plain-text printer job sheet with the
@@ -156,10 +155,10 @@ Back it up regularly, for example with `docker run --rm -v selfpressbooks_selfpr
    - `trimMultiplier` for A5, B5/6x9 and A4
    - `bindingSurchargePaise` for hardback
    - `minPages`, `maxPages` and `hardbackMinPages`
-   - `shippingPencePerCopy` (default £4 for ITPS; confirm the real rates)
+   - `shippingPencePerCopy` (default £4; confirm the real rates)
    - `platformMarginPercent`
 2. **Company details** in `config/site.ts`: company name, company number, registered address, VAT number, contact
-   email, data-protection contact or ICO number, governing law, and the India Post tracking URL template.
+   email, data-protection contact or ICO number, governing law, and the parcel tracking URL template.
 3. **Legal pages:** edit the text in Admin → Site pages, resolve every `[OWNER TO CONFIRM: …]`, then tick "reviewed".
    Key open points:
    - Who pays UK import VAT or charges on parcels from India.

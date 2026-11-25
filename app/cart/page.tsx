@@ -50,7 +50,7 @@ export default function CartPage({ searchParams }: { searchParams: Record<string
               </tbody>
             </table>
           </div>
-          <p className="small muted">Each book is printed to order in India and posted by India Post. See <Link href="/delivery">Delivery</Link>.</p>
+          <p className="small muted">Each book is printed to order in India and posted by tracked post. See <Link href="/delivery">Delivery</Link>.</p>
           <div className="actions"><Link href="/checkout" className="btn">Go to checkout</Link></div>
         </>
       )}

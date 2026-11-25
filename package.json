@@ -2,7 +2,7 @@
   "name": "selfpressbooks",
   "version": "0.1.0",
   "private": true,
-  "description": "SelfPressBooks - print-on-demand self-publishing (printed in India, posted to the UK by India Post)",
+  "description": "SelfPressBooks - print-on-demand self-publishing (printed in India, posted to the UK by tracked post)",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",

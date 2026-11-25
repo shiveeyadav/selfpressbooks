@@ -14,7 +14,7 @@ export const ORDER_STATUS_LABEL: Record<OrderStatus, string> = {
   paid: 'Paid',
   sent_to_printer: 'Sent to printer',
   printed: 'Printed',
-  shipped: 'Shipped (India Post)',
+  shipped: 'Shipped',
   delivered: 'Delivered',
   cancelled: 'Cancelled',
 };
@@ -38,7 +38,7 @@ export function isOrderStatus(s: string): s is OrderStatus {
 export function checkTransition(from: OrderStatus, to: OrderStatus, opts: { trackingNumber?: string | null; note?: string | null }): string | null {
   if (!NEXT_STATUSES[from].includes(to)) return `Cannot change an order from "${ORDER_STATUS_LABEL[from]}" to "${ORDER_STATUS_LABEL[to]}".`;
   if (to === 'shipped' && !(opts.trackingNumber && opts.trackingNumber.trim())) {
-    return 'Enter the India Post tracking number before marking the order as shipped.';
+    return 'Enter the tracking number before marking the order as shipped.';
   }
   if (from === 'pending_payment' && to === 'paid' && !(opts.note && opts.note.trim())) {
     return 'Marking an order paid by hand needs a note saying how payment was received (card payments are confirmed automatically by Stripe).';

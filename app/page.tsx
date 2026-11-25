@@ -10,7 +10,7 @@ export default function HomePage() {
       <section className="hero">
         <h1>Books by independent authors, printed for you</h1>
         <p>
-          Every copy is printed to order and posted to you in the UK by India Post. Delivery is included in the price and
+          Every copy is printed to order and posted to you in the UK by tracked post. Delivery is included in the price and
           is {siteConfig.deliveryEstimate}. <Link href="/delivery">Delivery details</Link>.
         </p>
         <div className="actions">
