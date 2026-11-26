@@ -21,7 +21,7 @@ export const DEFAULT_PAGES: DefaultPage[] = [
 ## How it works
 - Authors upload an interior PDF and a cover, and choose trim size, paper and binding.
 - Each book is checked by us before it appears in the shop.
-- When a reader orders, the book is printed by our print partner in India and posted to the UK by tracked post.
+- When a reader orders, the book is printed by our print partner and posted to the UK by tracked post.
 - Authors earn a royalty on every copy sold: the retail price minus printing, delivery and our platform fee.
 
 ## Who we are
@@ -30,13 +30,13 @@ export const DEFAULT_PAGES: DefaultPage[] = [
   {
     slug: 'delivery',
     title: 'Delivery',
-    body: `Every book is printed to order in India and sent to you by tracked international post.
+    body: `Every book is printed to order and sent to you by tracked international post.
 
 ## Where we deliver
 We currently deliver to addresses in the United Kingdom only.
 
 ## How long it takes
-Printing usually takes a few working days. Delivery from India to the UK is {{deliveryEstimate}}. Customs checks and busy periods can occasionally add time.
+Printing usually takes a few working days. Delivery to the UK is {{deliveryEstimate}}. Customs checks and busy periods can occasionally add time.
 
 ## Delivery cost
 UK delivery is included in the price shown for each book.
@@ -45,7 +45,7 @@ UK delivery is included in the price shown for each book.
 When your order is posted we add the tracking number to your order page (use the link you were given when you ordered).
 
 ## Customs and import charges
-[OWNER TO CONFIRM: who pays any UK VAT or import charges on books posted from India, and how this is handled.]
+[OWNER TO CONFIRM: who pays any UK VAT or import charges on books posted from outside the UK, and how this is handled.]
 
 ## Problems with delivery
 If your order has not arrived within 21 days of being posted, contact us at {{contactEmail}}.`,
@@ -79,11 +79,11 @@ Refunds go back to the card used to pay, usually within 5–10 working days afte
 
 ## Why we use it
 - To run author accounts and publish books.
-- To print and deliver orders. Your name and delivery address are shared with our print partner in India and with our delivery partner so the book can be printed and posted.
+- To print and deliver orders. Your name and delivery address are shared with our print partner and with our delivery partner so the book can be printed and posted.
 - To meet legal and accounting obligations.
 
 ## International transfers
-Order details are transferred to India for printing and posting. [OWNER TO CONFIRM: the safeguards used for this transfer under UK GDPR.]
+Order details may be transferred outside the UK for printing and posting. [OWNER TO CONFIRM: the safeguards used for this transfer under UK GDPR.]
 
 ## Cookies
 We use one essential cookie to keep you logged in and one to remember your basket. We do not use advertising or analytics cookies.
@@ -104,7 +104,7 @@ Data protection contact: {{dataProtectionContact}}.`,
 ## For buyers
 - Prices are in pounds sterling and include UK delivery.
 - An order is accepted once payment is confirmed.
-- Books are printed to order and posted from India; see the Delivery and Returns pages.
+- Books are printed to order and posted by tracked post; see the Delivery and Returns pages.
 
 ## For authors
 - You must own, or have permission to publish, everything in the files you upload, including the text, images and cover.

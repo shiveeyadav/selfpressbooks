@@ -69,7 +69,7 @@ export default function CheckoutPage({ searchParams }: { searchParams: Record<st
           </div>
           <p className="small muted" style={{ marginTop: 16 }}>
             By placing the order you agree to the <Link href="/terms">Terms</Link>. Your name and address are shared with
-            our printer in India and our delivery partner to deliver the book (see <Link href="/privacy">Privacy</Link>).
+            our print partner and our delivery partner to deliver the book (see <Link href="/privacy">Privacy</Link>).
           </p>
           <div className="actions">
             <button type="submit">{payments ? `Continue to payment – ${formatGbp(total)}` : 'Place order (payment not yet available)'}</button>
@@ -86,7 +86,7 @@ export default function CheckoutPage({ searchParams }: { searchParams: Record<st
               <tr className="total"><td>Total</td><td>{formatGbp(total)}</td></tr>
             </tbody>
           </table>
-          <p className="hint">Printed to order in India; delivery usually 7–14 days after printing.</p>
+          <p className="hint">Printed to order; delivery usually 7–14 days after printing.</p>
         </aside>
       </div>
     </div>

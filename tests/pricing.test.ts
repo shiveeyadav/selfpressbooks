@@ -4,12 +4,12 @@ import { calculatePrice, printCostPence } from '../lib/pricing';
 import { pricingConfig } from '../config/pricing';
 import { formatGbp, parseGbpToPence } from '../lib/money';
 
-const cfg = { ...pricingConfig, inrPerGbp: 100, platformMarginPercent: 10, shippingPencePerCopy: 400 };
+const cfg = { ...pricingConfig, printerCurrencyPerGbp: 100, platformMarginPercent: 10, shippingPencePerCopy: 400 };
 
-test('print cost = base + per-page x pages x trim + binding, converted from INR', () => {
-  // bw A5 paperback 200 pages: 5000 + 50*1*200 + 0 = 15000 paise = INR 150 = £1.50
+test('print cost = base + per-page x pages x trim + binding, converted from the printer currency', () => {
+  // bw A5 paperback 200 pages: 5000 + 50*1*200 + 0 = 15000 minor units = 150.00 = £1.50
   assert.equal(printCostPence({ trimSize: 'A5', paper: 'bw', binding: 'paperback', pageCount: 200 }, cfg), 150);
-  // colour A4 hardback 100 pages: 8000 + 300*1.8*100 + 25000 = 87000 paise -> £8.70
+  // colour A4 hardback 100 pages: 8000 + 300*1.8*100 + 25000 = 87000 minor units -> £8.70
   assert.equal(printCostPence({ trimSize: 'A4', paper: 'colour', binding: 'hardback', pageCount: 100 }, cfg), 870);
 });
 

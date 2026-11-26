@@ -1,7 +1,7 @@
 # SelfPressBooks (selfpressbooks.com) – MVP
 
 A print-on-demand self-publishing shop. Authors upload a finished book and set a price. When a UK reader buys it, the
-owner sends the files to an Indian print-on-demand printer, and the printed copy is posted to the reader by tracked international post.
+owner sends the files to a print-on-demand printer, and the printed copy is posted to the reader by tracked international post.
 
 > **Status: first version, not yet built or run.** The npm registry could not be reached from the container this was
 > written in, so `npm install`, `next build`, `next dev` and `docker build` were **never run**. There is no
@@ -150,10 +150,10 @@ Back it up regularly, for example with `docker run --rm -v selfpressbooks_selfpr
 
 1. **Printer rates** in `config/pricing.ts`. Every value marked `// PLACEHOLDER` is invented for development and is
    not a quote:
-   - `inrPerGbp` (exchange rate)
-   - `basePaise` and `perPagePaise` for B&W and colour
+   - `printerCurrencyPerGbp` (exchange rate)
+   - `baseMinor` and `perPageMinor` for B&W and colour
    - `trimMultiplier` for A5, B5/6x9 and A4
-   - `bindingSurchargePaise` for hardback
+   - `bindingSurchargeMinor` for hardback
    - `minPages`, `maxPages` and `hardbackMinPages`
    - `shippingPencePerCopy` (default £4; confirm the real rates)
    - `platformMarginPercent`
@@ -161,9 +161,9 @@ Back it up regularly, for example with `docker run --rm -v selfpressbooks_selfpr
    email, data-protection contact or ICO number, governing law, and the parcel tracking URL template.
 3. **Legal pages:** edit the text in Admin → Site pages, resolve every `[OWNER TO CONFIRM: …]`, then tick "reviewed".
    Key open points:
-   - Who pays UK import VAT or charges on parcels from India.
+   - Who pays UK import VAT or charges on parcels posted from outside the UK.
    - Cancellation rules for made-to-order goods.
-   - The UK GDPR transfer safeguards for sending order data to India.
+   - The UK GDPR transfer safeguards for sending order data outside the UK.
    - Data retention periods.
    - How and when royalties are paid out.
    - Liability wording.

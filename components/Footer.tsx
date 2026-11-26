@@ -14,7 +14,7 @@ export default function Footer() {
           <Link href="/signup">Publish with us</Link>
         </nav>
         <div>
-          {siteConfig.siteName} is operated by {siteConfig.companyName}. Books are printed to order in India and posted to
+          {siteConfig.siteName} is operated by {siteConfig.companyName}. Books are printed to order and posted to
           the UK by tracked post.
         </div>
       </div>

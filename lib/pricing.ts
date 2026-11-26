@@ -31,12 +31,12 @@ export function printCostPence(
   input: Pick<PriceInput, 'trimSize' | 'paper' | 'binding' | 'pageCount'>,
   cfg: PricingConfig = defaultConfig,
 ): number {
-  const paise =
-    cfg.basePaise[input.paper] +
-    cfg.perPagePaise[input.paper] * cfg.trimMultiplier[input.trimSize] * input.pageCount +
-    cfg.bindingSurchargePaise[input.binding];
-  // paise -> pence: (paise / 100 INR) / inrPerGbp GBP * 100 = paise / inrPerGbp
-  return Math.ceil(paise / cfg.inrPerGbp);
+  const minor =
+    cfg.baseMinor[input.paper] +
+    cfg.perPageMinor[input.paper] * cfg.trimMultiplier[input.trimSize] * input.pageCount +
+    cfg.bindingSurchargeMinor[input.binding];
+  // printer-currency minor units -> GBP pence: (minor / 100) / printerCurrencyPerGbp * 100 = minor / printerCurrencyPerGbp
+  return Math.ceil(minor / cfg.printerCurrencyPerGbp);
 }
 
 export function validateSpec(
@@ -45,8 +45,8 @@ export function validateSpec(
 ): string[] {
   const errors: string[] = [];
   if (!(input.trimSize in cfg.trimMultiplier)) errors.push('Choose a valid trim size.');
-  if (!(input.paper in cfg.perPagePaise)) errors.push('Choose a valid paper type.');
-  if (!(input.binding in cfg.bindingSurchargePaise)) errors.push('Choose a valid binding.');
+  if (!(input.paper in cfg.perPageMinor)) errors.push('Choose a valid paper type.');
+  if (!(input.binding in cfg.bindingSurchargeMinor)) errors.push('Choose a valid binding.');
   if (!Number.isInteger(input.pageCount)) {
     errors.push('Page count must be a whole number.');
   } else {
